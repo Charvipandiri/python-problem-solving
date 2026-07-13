@@ -1,0 +1,18 @@
+Problem: Find the 5 nearest tourist spots from a house using Euclidean distance.
+Return the coordinates of the 5 closest points.
+
+pnt = tuple(map(int, input().split()))
+n = int(input())
+lis = []
+for _ in range(n):
+    x, y = map(int, input().split())
+    lis.append((x, y))
+distance_list = []
+for point in lis:
+    distance = math.sqrt((point[0] - pnt[0])**2 + (point[1] - pnt[1])**2)
+    distance_list.append((distance, point))
+distance_list.sort(key=lambda x: x[0])
+result = []
+for i in range(min(5, len(distance_list))):
+    result.append(distance_list[i][1])
+print(result)
