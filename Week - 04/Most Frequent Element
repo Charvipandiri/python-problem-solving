@@ -1,0 +1,18 @@
+Problem: Given a list of elements, find and return the element that occurs the maximum number of times.
+         It is guaranteed that there is only one element with the highest frequency.
+
+def most_frequent_element(inp):
+    freq = {}
+    ans = None
+    max_count = 0
+    for item in inp:
+        if item in freq:
+            freq[item] += 1
+        else:
+            freq[item] = 1
+
+        if freq[item] > max_count:
+            max_count = freq[item]
+            ans = item
+
+    return ans
