@@ -1,0 +1,19 @@
+Problem: A store has a list of products and their prices stored in a nested list.
+         Increase the price of the products entered by the user by 20%.
+         Product list products = [['Pen', 10],['Book', 50],['Bag', 500],['Bottle', 100]]
+
+code: 
+products = [
+    ['Pen', 10],
+    ['Book', 50],
+    ['Bag', 500],
+    ['Bottle', 100]
+]
+
+update_items = input("Enter product names: ").split()
+
+for item in products:
+    if item[0] in update_items:
+        item[1] = item[1] * 1.20
+
+print(products)
