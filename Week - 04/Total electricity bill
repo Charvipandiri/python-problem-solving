@@ -1,0 +1,26 @@
+Problem: Electricity Bill Calculator using OOP Create a `Bill` class that calculates the total electricity bill
+         based on the previous and current meter readings.
+Billing Rules:
+- First 100 units: ₹3.5/unit
+- Next 100 units: ₹5/unit
+- Remaining units: ₹8/unit
+- Fixed meter charge: ₹150
+Implement the `total_bill()` method to return the total bill as a float.
+
+code:
+
+class Bill:
+
+    def __init__(self, prev_read, cur_read):
+        self.units = cur_read - prev_read
+
+    def total_bill(self):
+        if self.units <= 100:
+            return self.units * 3.5 + 150
+        elif self.units <= 200:
+            return 100 * 3.5 + (self.units - 100) * 5 + 150
+        else:
+            return 100 * 3.5 + 100 * 5 + (self.units - 200) * 8 + 150
+
+cur_read, prev_read = map(int,input().split())
+print(float(bill.total_bill()))
