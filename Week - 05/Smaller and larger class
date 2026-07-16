@@ -23,11 +23,9 @@ class Smaller:
     def evaluate(self):
         vowels = "aeiouAEIOU"
         ans = 0
-
         for ch in self.string:
             if ch in vowels:
                 ans += 1
-
         print(ans)
 
 
@@ -41,11 +39,9 @@ class Larger:
     def evaluate(self):
         vowels = "aeiouAEIOU"
         ans = 0
-
         for ch in self.string:
             if ch not in vowels:
                 ans += 1
-
         print(ans)
 name = input("Enter a name: ")
 if len(name) < 6:
