@@ -1,0 +1,12 @@
+Question:Write a Python function that takes a string and a length value as input arguments 
+and returns the words from the string whose length is equal to the provided input length value.
+
+code:
+length = int(input("Enter the length: "))
+sentence = input("Enter a sentence: ")
+words = sentence.split()
+result = []
+for word in words:
+    if len(word) == length:
+        result.append(word)
+print(result)
