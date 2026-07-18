@@ -1,0 +1,27 @@
+Question: Given a string, determine whether it is a palindrome by considering only alphanumeric characters and
+         ignoring uppercase/lowercase differences. Print "Palindrome" if it is a palindrome; otherwise, print "Not a Palindrome".
+
+code:
+text = input("Enter a string: ")
+
+left = 0
+right = len(text) - 1
+
+is_palindrome = True
+
+while left < right:
+    while left < right and not text[left].isalnum():
+        left += 1
+    while left < right and not text[right].isalnum():
+        right -= 1
+    if text[left].lower() != text[right].lower():
+        is_palindrome = False
+        break
+
+left += 1
+    right -= 1
+
+if is_palindrome:
+    print("Palindrome")
+else:
+    print("Not a Palindrome")
