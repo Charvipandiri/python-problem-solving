@@ -1,0 +1,16 @@
+Question:
+Write a Python program to validate a salary using a custom exception. Raise an exception if the salary
+is not in the exclusive range (10000, 100000); otherwise, print Congratulations!
+code:
+class SalaryNotInRangeError(Exception):
+    pass
+def check_salary(salary):
+    try:
+        if salary <= 10000 or salary >= 100000:
+            raise SalaryNotInRangeError("Salary is not in range")
+        else:
+            print("Congratulations!!")
+    except SalaryNotInRangeError as e:
+        print(e)
+salary = int(input("Enter Salary: "))
+check_salary(salary)
