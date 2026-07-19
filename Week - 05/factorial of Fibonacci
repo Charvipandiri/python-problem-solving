@@ -1,0 +1,47 @@
+Problem:
+Write a program to store the first N Fibonacci numbers in a list using Recursion.
+Also, create a second list which is a copy of the first one, to store the same elements but with the following conditions
+a. if the number is a prime number, replace it with its factorial
+b. else keep the number as it is
+
+code :
+
+def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    return n * factorial(n - 1)
+
+def is_prime(num):
+    if num <= 1:
+        return False
+
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+
+    return True
+
+N = int(input("Enter the value of N: "))
+
+fibonacci_list = []
+factorial_list = []
+
+for i in range(N):
+    fibonacci_list.append(fibonacci(i))
+
+for num in fibonacci_list:
+    if is_prime(num):
+        factorial_list.append(factorial(num))
+    else:
+        factorial_list.append(num)
+
+print("Fibonacci List :", fibonacci_list)
+print("Modified List  :", factorial_list)
