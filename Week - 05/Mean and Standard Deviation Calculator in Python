@@ -1,0 +1,14 @@
+Question:
+Write a Python program to calculate the mean and sample standard deviation of a list of numbers
+code:
+import math
+data = list(map(int, input().split()))
+mean = sum(data) / len(data)
+total = 0
+for i in data:
+    total = total + (i - mean) ** 2
+
+sd = math.sqrt(total / (len(data) - 1))
+
+print("Mean:", round(mean, 3))
+print("Standard Deviation:", round(sd, 3))
